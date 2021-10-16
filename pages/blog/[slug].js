@@ -12,7 +12,7 @@ const  slug = ({ post }) => {
 
 export async function getServerSideProps({params:{slug}}){
   
-    const request = await fetch(`${process.env.DOMAIN_NAME}/api/posts/singlepost/${slug}`)
+    const request = await fetch(`${process.env.DOMAIN_NAME || process.env.VERCEL_URL}/api/posts/singlepost/${slug}`)
 
     const data = await request.json()
 

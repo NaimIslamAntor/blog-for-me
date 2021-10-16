@@ -28,7 +28,7 @@ export default function Home({ datas }) {
 
 
 export async function getServerSideProps(){
-  const req = await fetch(`${process.env.DOMAIN_NAME}/api/posts/posts`)
+  const req = await fetch(`${process.env.DOMAIN_NAME || process.env.VERCEL_URL}/api/posts/posts`)
 
   const data = await req.json()
 
